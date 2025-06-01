@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+body{
+    background-color: rgb(118, 214, 214);
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(43, 95, 43);
+    color: rgb(255, 255, 255);
+    padding: 1rem 2rem;
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.nav-links{
+    display: flex;
+    list-style: none;
+}
+.nav-links li {
+    margin-left: 2rem;
+}
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.nav-links a:hover{
+    color: rgb(67, 184, 83);
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.container{
+    max-width: 1200px;
+
+    margin: 2rem auto;
+    padding: 0.1rem;
+}
+h1{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgba(0, 0, 0, 0.863);
+}
+.cards{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card{
+    background: white;
+    border-radius: 8px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.705);
+    padding: 1.5rem;
+    width: calc(33.333% - 1rem);
+    transition: transform 0.3s;
+}
+.card:hover{
+    transform: translateY(-5px);
+}
+.card h2{
+    color: #333;
+    margin-bottom: 1rem;
+}
+.card p{
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+.card-btn{
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.card-btn:hover{
+    background-color: 215c24;
+}
+@media screen and (max-width: 768px){
+    .nav-links{
+        position: absolute;
+        right: 0;
+        top: 60px;
+        background-color: #333;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .nav-links.active{
+        transform: translateX(0);
+    }
+    .nav-links li{
+        margin: 1rem 0;
+    }
+    .burger{
+        display: block;
+    }
+    .card{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px) and (min-width: 769px){
+    .card{
+        width: calc(50% - 1rem);
+    }
+}
